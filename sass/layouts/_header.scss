@@ -1,0 +1,87 @@
+@use '../variables/breakpoints';
+
+@mixin header{
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 2fr 2fr;
+	grid-template-areas: 
+		"logo title menu"
+		"logo title menu"
+	;
+	gap: 1rem;
+
+	@media(max-width: breakpoints.$medium){
+		grid-template-areas: 
+			"logo title title"
+			"logo menu menu"
+		;
+	}
+
+	@media(max-width: breakpoints.$smaller){
+		grid-template-areas: 
+			"logo title menu"
+			"logo title menu"
+		;
+	}
+
+	.site-logo{
+		grid-area: logo;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		border-right: 2px solid #ffffff;
+		.custom-logo{
+			height: 130px;
+			width: auto;
+			@media(max-width: breakpoints.$smallest){
+				height: 100px;
+			}
+		}
+	}
+
+	.site-title{
+		grid-area: title;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		a:hover{
+			color: unset;
+		}
+		@media(max-width: breakpoints.$small){
+			h1{font-size: 1.5rem;}
+		}
+	}
+
+	.main-navigation{
+		grid-area: menu;
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		@media(max-width: breakpoints.$medium){
+			justify-content: flex-end;
+		}
+		.menu{
+			display: flex;
+			gap: 1rem;
+			list-style: none;
+			list-style-type: none;
+			font-size: 2rem;
+			a{text-decoration: none;}
+			@media(max-width: breakpoints.$small){
+				font-size: 1.5rem;
+			}
+		}
+		.fa-bars{
+			display: none;
+			font-size: 4rem;
+			@media(max-width: breakpoints.$smallest){
+				font-size: 3rem;
+			}
+		}
+		@media(max-width: breakpoints.$smaller){
+			.menu{display: none;}
+			.fa-bars{display: block;}
+		}
+	}
+}

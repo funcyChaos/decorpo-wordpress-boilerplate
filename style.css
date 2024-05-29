@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 180px auto 200px;
+  grid-template-areas: "header header header" "sidebar content ." "footer footer footer";
+  gap: 1rem;
+  min-height: 100vh;
+}
+.site .site-header {
+  grid-area: header;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-areas: "logo title menu" "logo title menu";
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .site .site-header {
+    grid-template-areas: "logo title title" "logo menu menu";
+  }
+}
+@media (max-width: 440px) {
+  .site .site-header {
+    grid-template-areas: "logo title menu" "logo title menu";
+  }
+}
+.site .site-header .site-logo {
+  grid-area: logo;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-right: 2px solid #ffffff;
+}
+.site .site-header .site-logo .custom-logo {
+  height: 130px;
+  width: auto;
+}
+@media (max-width: 375px) {
+  .site .site-header .site-logo .custom-logo {
+    height: 100px;
+  }
+}
+.site .site-header .site-title {
+  grid-area: title;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.site .site-header .site-title a:hover {
+  color: unset;
+}
+@media (max-width: 530px) {
+  .site .site-header .site-title h1 {
+    font-size: 1.5rem;
+  }
+}
+.site .site-header .main-navigation {
+  grid-area: menu;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+@media (max-width: 900px) {
+  .site .site-header .main-navigation {
+    justify-content: flex-end;
+  }
+}
+.site .site-header .main-navigation .menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  list-style-type: none;
+  font-size: 2rem;
+}
+.site .site-header .main-navigation .menu a {
+  text-decoration: none;
+}
+@media (max-width: 530px) {
+  .site .site-header .main-navigation .menu {
+    font-size: 1.5rem;
+  }
+}
+.site .site-header .main-navigation .fa-bars {
+  display: none;
+  font-size: 4rem;
+}
+@media (max-width: 375px) {
+  .site .site-header .main-navigation .fa-bars {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 440px) {
+  .site .site-header .main-navigation .menu {
+    display: none;
+  }
+  .site .site-header .main-navigation .fa-bars {
+    display: block;
+  }
+}
+.site .sidebar {
+  grid-area: sidebar;
+  padding: 10px;
+}
+.site .content-main {
+  grid-area: content;
+}
+.site .content-main * {
+  margin: 10px 0;
+}
+.site .site-footer {
+  grid-area: footer;
+}
+.site .site-header, .site .content-main, .site .site-footer {
+  padding: 1rem;
+}
+
+/*!
+Theme Name: Decorpo Boilerplate
+Theme URI: http://decorpotechgarage.com
+Author: funcychaos
+Author URI: http://decorpotechgarage.com
+Description: A bare minimum boilerplate my way
+Version: 1.0.0
+Requires PHP:
+Tested up to: 8.2
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: decorpo-tech-garage
+Tags: css-grid
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+
+# Base
+
+# Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+/* Normalize
+--------------------------------------------- */
+/* Box sizing
+--------------------------------------------- */
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/* Jetpack infinite scroll
+--------------------------------------------- */
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+/* Accessibility
+--------------------------------------------- */
+/* Alignments
+--------------------------------------------- */
+
+/*# sourceMappingURL=style.css.map */

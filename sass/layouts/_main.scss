@@ -1,0 +1,38 @@
+@use './header';
+
+.site{
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-template-rows: 180px auto 200px;
+	grid-template-areas: 
+		"header header header"
+		"sidebar content ."
+		"footer footer footer"
+	;
+	gap: 1rem;
+	min-height: 100vh;
+
+	.site-header{
+		grid-area: header;
+		@include header.header;
+	}
+
+	.sidebar{
+		grid-area: sidebar;
+		padding: 10px;
+	}
+
+	.content-main{
+		grid-area: content;
+		
+		*{margin: 10px 0;}
+	}
+
+	.site-footer{
+		grid-area: footer;
+	}
+
+	.site-header,.content-main,.site-footer{
+		padding: 1rem;
+	}
+}
