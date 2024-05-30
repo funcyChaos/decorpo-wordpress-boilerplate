@@ -14,10 +14,11 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 add_action('wp_enqueue_scripts', function(){
 	// Main Style Sheet
-	wp_enqueue_style('main-stylesheet', get_stylesheet_uri(), array(), _S_VERSION);
+	wp_enqueue_style('main-stylesheet', get_stylesheet_uri(), [], _S_VERSION);
 	wp_style_add_data('main-stylesheet', 'rtl', 'replace');
 	// Icon script
 	wp_enqueue_script('fontawesome-kit', 'https://kit.fontawesome.com/aebdbe8212.js','','',true);
+	wp_enqueue_script('mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', [], _S_VERSION, true);
 });
 
 add_action('admin_menu', function(){

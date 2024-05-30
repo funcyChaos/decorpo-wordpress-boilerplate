@@ -22,6 +22,9 @@
 	</head>
 	<body <?php body_class();?>>
 	<?php wp_body_open();?>
+	<div id="mobile_menu" class="mobile-menu hidden">
+
+	</div>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'decorpo-tech-garage');?></a>
 		<header id="masthead" class="site-header">
@@ -49,5 +52,6 @@
 					);
 				?>
 				<i id="mobile_toggle" class="fas fa-bars"></i>
+
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->

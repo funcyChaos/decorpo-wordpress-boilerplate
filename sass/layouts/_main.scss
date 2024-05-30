@@ -1,4 +1,7 @@
 @use './header';
+@use '../variables/breakpoints';
+
+@include header.mobile-menu;
 
 .site{
 	display: grid;
@@ -34,5 +37,8 @@
 
 	.site-header,.content-main,.site-footer{
 		padding: 1rem;
+		@media(max-width: breakpoints.$smaller){
+			padding: .5rem;
+		}
 	}
 }

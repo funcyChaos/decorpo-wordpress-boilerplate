@@ -1,9 +1,33 @@
 @use '../variables/breakpoints';
 
+@mixin mobile-menu{
+	.mobile-menu{
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: black;
+		height: 100vh;
+		width: 100vw;
+		opacity: 1;
+	}
+	.hidden {
+		display: none;
+	}
+	/* ensure box is displayed block during the transition  */
+	.transition.hidden {
+		display: block;
+		opacity: 0;
+	}
+	.transition {
+		transition: opacity 0.2s ease;
+	}
+}
+
 @mixin header{
+	padding: 0;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 2fr 2fr;
+	grid-template-columns: 170px 1fr 2fr;
 	grid-template-areas: 
 		"logo title menu"
 		"logo title menu"
@@ -22,6 +46,10 @@
 			"logo title menu"
 			"logo title menu"
 		;
+	}
+
+	@media(max-width: breakpoints.$smallest){
+		grid-template-columns: 130px 1fr 1fr;
 	}
 
 	.site-logo{
@@ -50,6 +78,7 @@
 		}
 		@media(max-width: breakpoints.$small){
 			h1{font-size: 1.5rem;}
+			align-items: flex-start;
 		}
 	}
 
@@ -57,6 +86,7 @@
 		grid-area: menu;
 		height: 100%;
 		display: flex;
+		justify-content: center;
 		align-items: flex-end;
 		@media(max-width: breakpoints.$medium){
 			justify-content: flex-end;
@@ -75,6 +105,7 @@
 		.fa-bars{
 			display: none;
 			font-size: 4rem;
+			cursor: pointer;
 			@media(max-width: breakpoints.$smallest){
 				font-size: 3rem;
 			}
