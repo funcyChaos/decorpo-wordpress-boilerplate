@@ -1,0 +1,13 @@
+.post{
+	border-top: solid white 2px;
+	&:last-of-type{
+		border-bottom: solid white 2px;
+	}
+	.entry-header{
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+}
+
+// ?><h2>- <?php the_date('Y-m-d');?> -</h2><?

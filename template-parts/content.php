@@ -9,8 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
+	<?php
 		if(is_singular()){
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			the_content(
@@ -28,9 +27,16 @@
 				)
 			);
 		}else{
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			the_date('Y-m-d');
-			the_excerpt();
+			?>
+				<header class="entry-header">
+					<?php
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+						?><h2>* <?=get_the_date('Y-m-d');?> *</h2>
+				</header>
+				<footer class="entry-footer">
+					<?php the_excerpt();?>
+				</footer><!-- .entry-footer -->
+			<?php
 		}
 
 		// wp_link_pages(
@@ -39,10 +45,6 @@
 		// 		'after'  => '</div>',
 		// 	)
 		// );
-		?>
+	?>
 	<!-- </div>.entry-content -->
-
-	<footer class="entry-footer">
-		<?php //towerpf_site_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
