@@ -1,0 +1,13 @@
+@use '../../variables/breakpoints';
+
+@mixin footer{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	@media(max-width: breakpoints.$small){
+		flex-direction: column;
+		.fa-5x{
+			font-size: 3em;
+		}
+	}
+}

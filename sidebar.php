@@ -2,9 +2,9 @@
 	<?php
 		get_search_form();
 	?>
-	<ul>
+	<!-- <ul>
 		<li>Pages</li>
 		<li>Categories</li>
 		<li>Services</li>
-	</ul>
+	</ul> -->
 </div>

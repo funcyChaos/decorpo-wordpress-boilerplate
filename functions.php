@@ -7,6 +7,11 @@
  * @package decorpo-tech-garage
  */
 
+// add_action('admin_bar_menu', function(){
+// 	global $template;
+// 	print_r($template);
+// });
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );

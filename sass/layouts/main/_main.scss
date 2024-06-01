@@ -1,0 +1,61 @@
+@use './header';
+@use './footer';
+@use '../../variables/breakpoints';
+
+@include header.mobile-menu;
+
+.site{
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-template-rows: 180px auto 200px;
+	grid-template-areas: 
+		"header header header"
+		"sidebar content ."
+		"footer footer footer"
+	;
+	@media(max-width: breakpoints.$medium){
+		grid-template-columns: 1fr 3fr 3fr;
+		grid-template-areas:
+			"header header header"
+			"content content content"
+			"sidebar footer footer"
+		;
+	}
+	gap: 1rem;
+	min-height: 100vh;
+
+	.site-header{
+		grid-area: header;
+		@include header.header;
+	}
+
+	.sidebar{
+		grid-area: sidebar;
+		padding-left: 10px;
+		padding-bottom: 10px;
+	}
+
+	.content-main{
+		grid-area: content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+		*{margin: 10px 0;}
+		@media(max-width: breakpoints.$medium){
+			margin: 0 1rem;
+		}
+	}
+
+	.site-footer{
+		grid-area: footer;
+		@include footer.footer;
+	}
+
+	.site-header,.content-main,.site-footer{
+		padding: 1rem;
+		@media(max-width: breakpoints.$smaller){
+			padding: .5rem;
+		}
+	}
+}

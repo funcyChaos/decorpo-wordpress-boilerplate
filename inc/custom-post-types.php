@@ -14,6 +14,8 @@ add_action('init', function(){
 		'has_archive'			=> 'services',
 		'rewrite'					=> ['slug' => 'services', 'with_front' => false],
 		'show_in_rest'		=> true,
+		'show_in_menu'		=> true,
+		'show_ui'					=> true,
 		'rest_base'				=> 'services',
 		'supports'				=> ['title', 'editor', 'thumbnail', 'excerpt', 'author'],
 		'map_meta_cap'		=> true,

@@ -8,9 +8,10 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<?php
 		if(is_singular()){
+			?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			the_content(
 				sprintf(
@@ -28,14 +29,18 @@
 			);
 		}else{
 			?>
-				<header class="entry-header">
-					<?php
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-						?><h2>* <?=get_the_date('Y-m-d');?> *</h2>
-				</header>
-				<footer class="entry-footer">
-					<?php the_excerpt();?>
-				</footer><!-- .entry-footer -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class('post-list-item'); ?>>
+					<a href="<?=esc_url(get_permalink())?>">
+						<header class="entry-header">
+							<?php
+								the_title( '<h2 class="entry-title">', '</h2>' );
+							?>
+							<h2>* <?=get_the_date('Y-m-d');?> *</h2>
+						</header>
+						<footer class="entry-footer">
+							<?php the_excerpt();?>
+						</footer><!-- .entry-footer -->
+					</a>
 			<?php
 		}
 

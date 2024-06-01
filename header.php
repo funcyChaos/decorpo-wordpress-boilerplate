@@ -23,6 +23,7 @@
 	<body <?php body_class();?>>
 	<?php wp_body_open();?>
 	<div id="mobile_menu" class="mobile-menu hidden">
+		<i class="fas fa-dice-d20"></i>
 		<?php
 			wp_nav_menu(
 				array(
