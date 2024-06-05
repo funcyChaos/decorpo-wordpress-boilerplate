@@ -2,9 +2,9 @@
 	<?php
 		get_search_form();
 	?>
-	<!-- <ul>
-		<li>Pages</li>
-		<li>Categories</li>
-		<li>Services</li>
-	</ul> -->
+	<ul>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
 </div>

@@ -15,7 +15,14 @@
 get_header();
 ?>
 	<main id="primary" class="content-main">
-		<img src="<?=bloginfo('template_directory')?>/img/rick-roll.gif" alt="Rick Rolled">
+		<?php
+			if(have_posts()){
+				while(have_posts()){
+					the_post();
+					the_content();
+				}
+			}else{?><img src="<?=bloginfo('template_directory')?>/img/rick-roll.gif" alt="Rick Rolled"><?php }
+		?>
 	</main><!-- #main -->
 <?php
 get_sidebar();
