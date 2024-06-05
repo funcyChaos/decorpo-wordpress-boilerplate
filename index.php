@@ -11,7 +11,7 @@
  *
  * @package decorpo-tech-garage
  */
-
+// This is just a test
 get_header();
 ?>
 	<main id="primary" class="content-main">
