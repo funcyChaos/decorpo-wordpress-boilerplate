@@ -1,0 +1,22 @@
+.service.post-list-item{
+	width: 100%;
+	border-bottom: white solid 2px;
+	a{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		img{
+			height: 200px;
+			width: auto;
+		}
+	}
+	footer{
+		text-align: center;
+	}
+}
