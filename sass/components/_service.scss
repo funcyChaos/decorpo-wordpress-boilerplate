@@ -1,3 +1,5 @@
+@use '../variables/breakpoints';
+
 .service.post-list-item{
 	width: 100%;
 	border-bottom: white solid 2px;
@@ -14,6 +16,14 @@
 		img{
 			height: 200px;
 			width: auto;
+		}
+		@media(max-width: breakpoints.$small){
+			flex-direction: column;
+			img{height: 150px;}
+		}
+		@media(max-width: breakpoints.$smallest){
+			img{height: 100px;}
+			text-align: center;
 		}
 	}
 	footer{
