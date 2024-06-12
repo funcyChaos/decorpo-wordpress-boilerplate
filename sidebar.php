@@ -1,10 +1,7 @@
 <div class="sidebar">
 	<?php
 		get_search_form();
+		wp_list_categories(['title_li'=>'Service Categories', 'taxonomy'=>'type']);
+		wp_list_categories(['title_li'=>'Blog Categories']);
 	?>
-	<ul>
-		<li><a href="#">Services</a></li>
-		<li><a href="#">Blog</a></li>
-		<li><a href="#">About</a></li>
-	</ul>
 </div>

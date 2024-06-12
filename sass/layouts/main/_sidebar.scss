@@ -1,0 +1,11 @@
+@use '../../variables/breakpoints';
+
+@mixin sidebar{
+	padding-left: 10px;
+	padding-bottom: 10px;
+	.categories{
+		@media(max-width: breakpoints.$medium){
+			display: none;
+		}
+	}
+}
