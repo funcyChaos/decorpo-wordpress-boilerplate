@@ -15,7 +15,7 @@
 get_header();
 ?>
 	<main id="primary" class="content-main">
-		<img src="<?=bloginfo('template_directory')?>/img/rick-roll.gif" alt="Rick Rolled">
+		<img style="width: 300px;" src="<?=bloginfo('template_directory')?>/img/rick-roll.gif" alt="Rick Rolled">
 	</main><!-- #main -->
 <?php
 get_sidebar();
