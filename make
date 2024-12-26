@@ -1,0 +1,1 @@
+scp -r ~/path-to/decorpo-wordpress-boilerplate/* dtg-do:/var/www/html/decorpotechgarage.com/wp-content/themes/decorpo-wordpress-boilerplate

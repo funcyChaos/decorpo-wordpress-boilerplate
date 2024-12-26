@@ -27,3 +27,11 @@ add_action('init', function(){
 		'rewrite'				=> ['slug' => 'service-categories', 'with_front' => false],
 	]);
 });
+
+add_action('pre_get_posts', function($query){
+	if (!is_admin() && $query->is_main_query() && is_post_type_archive('service')){
+		$query->set('meta_key', 'priority');
+		$query->set('orderby', 'meta_value_num');
+		$query->set('order', 'ASC');
+	}
+});

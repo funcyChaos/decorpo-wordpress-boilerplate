@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	@media(max-width: breakpoints.$small){
+	@media(max-width: breakpoints.$medium){
 		flex-direction: column;
 		.fa-5x{
 			font-size: 3em;

@@ -8,7 +8,7 @@
 .site{
 	display: grid;
 	grid-template-columns: 1fr 5fr 1fr;
-	grid-template-rows: 180px auto 200px;
+	grid-template-rows: 70px auto 200px;
 	grid-template-areas: 
 		"header header header"
 		"sidebar content ."
@@ -39,7 +39,7 @@
 		grid-area: content;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		// align-items: center;
 		
 		*{margin: 10px 0;}
 		@media(max-width: breakpoints.$medium){
@@ -52,7 +52,7 @@
 		@include footer.footer;
 	}
 
-	.site-header,.content-main,.site-footer{
+	.content-main,.site-footer{
 		padding: 1rem;
 		@media(max-width: breakpoints.$smaller){
 			padding: .5rem;

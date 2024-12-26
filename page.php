@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The Page Template file for pages
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -11,6 +11,7 @@
  *
  * @package decorpo-tech-garage
  */
+
 get_header();
 ?>
 	<main id="primary" class="content-main">

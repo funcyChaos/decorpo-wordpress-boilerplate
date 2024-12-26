@@ -11,25 +11,12 @@
  *
  * @package decorpo-tech-garage
  */
+
 get_header();
 ?>
 	<main id="primary" class="content-main">
-		<?php
-		if(have_posts()){
-			if(is_home() && !is_front_page()){
-				the_post();
-				?><h1><?php single_post_title();?></h1><?php
-				get_template_part('template-parts/content', get_post_type());
-			}
-			while(have_posts()){
-				the_post();
-				get_template_part('template-parts/content', get_post_type());
-			}
-			the_posts_navigation();
-		}else{
-			get_template_part('template-parts/content', 'none');
-		}
-?>
+		<img style="max-width: 400px;" src="<?=bloginfo('template_directory')?>/img/rick-roll.gif" alt="Rick Rolled">
+		<h1>404 I could not find that</h1>
 	</main><!-- #main -->
 <?php
 get_sidebar();

@@ -9,6 +9,9 @@
 
 ?>
 			<footer id="colophon" class="site-footer">
+				<a href="mailto:austinr@decorpotechgarage.com">
+					<i class="fas fa-envelope fa-5x"></i>
+				</a>
 				<a href="https://www.instagram.com/funcychaos/" target="_blank">
 					<i title="@funcyChaos" class="fas fa-hashtag fa-5x"></i>
 				</a>

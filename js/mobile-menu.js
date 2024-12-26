@@ -1,3 +1,5 @@
+// Styles for the menu and mobile menu can be found in sass/layouts/main/_header.scss
+
 document.addEventListener('DOMContentLoaded', ()=>{
 	const mobileMenu = document.getElementById('mobile_menu')
 	const page = document.getElementById('page')

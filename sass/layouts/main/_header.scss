@@ -24,7 +24,7 @@
 			font-size: 2rem;
 			a{
 				color: white;
-				text-decoration: none;
+				// text-decoration: none;
 			}
 			@media(max-width: breakpoints.$small){
 				font-size: 1.5rem;
@@ -41,7 +41,6 @@
 	.hidden {
 		display: none;
 	}
-	/* ensure box is displayed block during the transition  */
 	.transition.hidden {
 		display: block;
 		opacity: 0;
@@ -55,7 +54,7 @@
 	padding: 0;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 170px 1fr 2fr;
+	grid-template-columns: 100px 1fr 1fr;
 	grid-template-areas: 
 		"logo title menu"
 		"logo title menu"
@@ -63,21 +62,11 @@
 	gap: 1rem;
 
 	@media(max-width: breakpoints.$medium){
-		grid-template-areas: 
-			"logo title title"
-			"logo menu menu"
-		;
-	}
-
-	@media(max-width: breakpoints.$smaller){
+		grid-template-columns: 100px 2fr 1fr;
 		grid-template-areas: 
 			"logo title menu"
 			"logo title menu"
 		;
-	}
-
-	@media(max-width: breakpoints.$smallest){
-		grid-template-columns: 130px 1fr 1fr;
 	}
 
 	.site-logo{
@@ -85,14 +74,12 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 1rem;
 		border-right: 2px solid #ffffff;
 		.custom-logo{
-			height: 130px;
+			height: 50px;
 			width: auto;
-			@media(max-width: breakpoints.$smallest){
-				height: 100px;
-			}
 		}
 	}
 
@@ -101,12 +88,12 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+		a{text-decoration: none;}
 		a:hover{
 			color: unset;
 		}
 		@media(max-width: breakpoints.$small){
-			h1{font-size: 1.5rem;}
-			align-items: flex-start;
+			font-size: .6rem;
 		}
 	}
 
@@ -115,8 +102,9 @@
 		height: 100%;
 		display: flex;
 		justify-content: center;
-		align-items: flex-end;
+		align-items: center;
 		@media(max-width: breakpoints.$medium){
+			padding-right: 10px;
 			justify-content: flex-end;
 		}
 		.menu{
@@ -125,7 +113,7 @@
 			list-style: none;
 			list-style-type: none;
 			font-size: 2rem;
-			a{text-decoration: none;}
+			// a{text-decoration: none;}
 			@media(max-width: breakpoints.$small){
 				font-size: 1.5rem;
 			}
@@ -138,7 +126,7 @@
 				font-size: 3rem;
 			}
 		}
-		@media(max-width: breakpoints.$smaller){
+		@media(max-width: breakpoints.$medium){
 			.menu{display: none;}
 			.fa-bars{display: block;}
 		}
