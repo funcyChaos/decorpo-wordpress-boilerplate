@@ -1,0 +1,91 @@
+@use './header';
+@use './sidebar';
+@use '../common/common';
+@use './footer';
+@use '../variables/breakpoints';
+@use '../variables/colors';
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+// *** On top of site ***
+@include header.mobile-menu;
+
+@mixin main-elements{
+	background-color: colors.$foreground;
+	color: colors.$font;
+	border-radius: 1rem;
+}
+
+.content-main,.site-footer{
+	padding: 1rem;
+	@media(max-width: breakpoints.$smaller){
+		padding: .5rem;
+	}
+}
+
+// *** Main Layout ***
+.site{
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-template-rows: 70px auto 200px;
+	grid-template-areas: 
+		"sidebar header header"
+		"sidebar content content"
+		"footer footer footer"
+	;
+
+	gap: 1rem;
+	min-height: 100vh;
+	padding: .6rem;
+
+	font-family: "Titillium Web", serif;
+  font-weight: 300;
+  font-style: normal;
+	background-color: colors.$background;
+	a{color: colors.$font;}
+
+	@media(max-width: breakpoints.$small){
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: 
+			"header"
+			"content"
+			"sidebar"
+			"footer"
+		;
+	
+		gap: .5rem;
+	}
+
+	header{
+		grid-area: header;
+		@include main-elements();
+		@include header.header;
+	}
+
+	aside{
+		grid-area: sidebar;
+		@include main-elements();
+		@include sidebar.sidebar;
+	}
+
+	main{
+		grid-area: content;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		@include main-elements();
+		@include common.common;
+		*{margin: 10px 0;}
+		
+		@media(min-width: breakpoints.$large){
+			padding-right: 200px;
+		}
+	}
+
+	footer{
+		grid-area: footer;
+		@include main-elements();
+		@include footer.footer;
+	}
+}

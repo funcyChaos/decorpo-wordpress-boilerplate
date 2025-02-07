@@ -1,0 +1,5 @@
+@mixin common{
+	.wp-block-image img, .wp-block-video video{
+		border-radius: 1rem;
+	}
+}

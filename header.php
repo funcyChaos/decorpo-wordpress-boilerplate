@@ -16,7 +16,6 @@
 		<meta charset="<?php bloginfo('charset');?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php
-			require get_template_directory().'/inc/dynamic-styles.php';
 			wp_head();
 		?>
 	</head>
@@ -37,14 +36,6 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'decorpo-tech-garage');?></a>
 		<header id="masthead" class="site-header">
-			<div class="site-logo">
-				<?php
-					// Cause this should be a conditional
-					if(true){
-						the_custom_logo();
-					}
-				?>
-			</div>
 			<div class="site-title">
 				<a href="<?=get_home_url()?>">
 					<h1><?php bloginfo('name');?></h1>

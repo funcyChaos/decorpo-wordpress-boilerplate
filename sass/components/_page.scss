@@ -1,8 +1,10 @@
+@use '../variables/colors';
+
 .page.post-list-item{
 	width: 100%;
-	border-top: solid white 2px;
+	border-top: solid colors.$font 2px;
 	&:last-of-type{
-		border-bottom: solid white 2px;
+		border-bottom: solid colors.$font 2px;
 	}
 	.entry-header{
 		display: flex;

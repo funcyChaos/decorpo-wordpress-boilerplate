@@ -1,8 +1,9 @@
 @use '../variables/breakpoints';
+@use '../variables/colors';
 
 .service.post-list-item{
 	width: 100%;
-	border-bottom: white solid 2px;
+	border-bottom: colors.$font solid 2px;
 	a{
 		display: flex;
 		flex-direction: column;

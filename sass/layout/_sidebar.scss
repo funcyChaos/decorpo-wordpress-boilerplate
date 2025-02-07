@@ -1,0 +1,42 @@
+@use '../variables/breakpoints';
+@use '../variables/colors';
+
+@mixin sidebar{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: .4rem;
+
+	.site-logo img{
+			width: 150px;
+			height: auto;
+	}
+
+	li{
+		list-style: none;
+		margin: 5px 0;
+	}
+	.searchform{
+		display: flex;
+		align-items: center;
+		input[type=search]{
+			width: 7rem;
+			height: 1.5rem;
+			@media(max-width: breakpoints.$small){
+				width: 12rem;
+			}
+		}
+		button[type=submit]{
+			height: 1.5rem;
+			margin-top: 2px;
+		}
+	}
+	a{
+		color: colors.$font;
+		&:hover{color: colors.$link;}
+	}
+	.categories>li:nth-child(2){
+		margin-top: 2rem;
+	}
+}

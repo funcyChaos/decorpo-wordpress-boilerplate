@@ -1,4 +1,5 @@
-@use '../../variables/breakpoints';
+@use '../variables/breakpoints';
+@use '../variables/colors';
 
 @mixin mobile-menu{
 	.mobile-menu{
@@ -11,7 +12,7 @@
 		flex-direction: column;
 		padding-top: 10rem;
 		background-color: black;
-		color: white;
+		color: colors.$font;
 		opacity: 1;
 
 		.menu{
@@ -21,11 +22,8 @@
 			gap: 1rem;
 			list-style: none;
 			list-style-type: none;
-			font-size: 2rem;
-			a{
-				color: white;
-				// text-decoration: none;
-			}
+			font-size: .5rem;
+			a{color: colors.$font;}
 			@media(max-width: breakpoints.$small){
 				font-size: 1.5rem;
 			}
@@ -51,60 +49,43 @@
 }
 
 @mixin header{
-	padding: 0;
+	padding: 5px;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 100px 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
-		"logo title menu"
-		"logo title menu"
+		"title menu"
+		"title menu"
 	;
 	gap: 1rem;
 
 	@media(max-width: breakpoints.$medium){
-		grid-template-columns: 100px 2fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		grid-template-areas: 
-			"logo title menu"
-			"logo title menu"
+			"title menu"
+			"title menu"
 		;
-	}
-
-	.site-logo{
-		grid-area: logo;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
-		border-right: 2px solid #ffffff;
-		.custom-logo{
-			height: 50px;
-			width: auto;
-		}
 	}
 
 	.site-title{
 		grid-area: title;
-		height: 100%;
-		display: flex;
-		align-items: center;
 		a{text-decoration: none;}
-		a:hover{
-			color: unset;
-		}
 		@media(max-width: breakpoints.$small){
+			display: flex;
+			align-items: center;
 			font-size: .6rem;
+			a{margin-bottom: 8px;}
 		}
 	}
 
 	.main-navigation{
 		grid-area: menu;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@media(min-width: breakpoints.$large){
+			padding-right: 200px;
+		}
 		@media(max-width: breakpoints.$medium){
 			padding-right: 10px;
+			display: flex;
 			justify-content: flex-end;
 		}
 		.menu{
@@ -113,20 +94,20 @@
 			list-style: none;
 			list-style-type: none;
 			font-size: 2rem;
-			// a{text-decoration: none;}
+			a:hover{color: colors.$link;}
 			@media(max-width: breakpoints.$small){
 				font-size: 1.5rem;
 			}
 		}
 		.fa-bars{
 			display: none;
-			font-size: 4rem;
+			font-size: 2rem;
 			cursor: pointer;
 			@media(max-width: breakpoints.$smallest){
 				font-size: 3rem;
 			}
 		}
-		@media(max-width: breakpoints.$medium){
+		@media(max-width: 750px){
 			.menu{display: none;}
 			.fa-bars{display: block;}
 		}
