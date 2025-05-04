@@ -15,7 +15,7 @@
 	border-radius: 1rem;
 }
 
-.content-main,.site-footer{
+.content-main, .site-footer{
 	padding: 1rem;
 	@media(max-width: breakpoints.$smaller){
 		padding: .5rem;
@@ -28,14 +28,14 @@
 	grid-template-columns: 1fr 5fr 1fr;
 	grid-template-rows: 70px auto 200px;
 	grid-template-areas: 
-		"sidebar header header"
-		"sidebar content content"
+		"sidebar header ."
+		"sidebar content ."
 		"footer footer footer"
 	;
 
 	gap: 1rem;
 	min-height: 100vh;
-	padding: .6rem;
+	// padding: .6rem;
 
 	font-family: "Titillium Web", serif;
   font-weight: 300;
@@ -43,9 +43,17 @@
 	background-color: colors.$background;
 	a{color: colors.$font;}
 
+	@media(max-width: breakpoints.$large){
+		grid-template-areas: 
+			"sidebar header header"
+			"sidebar content content"
+			"footer footer footer"
+		;
+	}
+
 	@media(max-width: breakpoints.$small){
 		grid-template-columns: 1fr;
-		grid-template-rows: auto auto auto auto;
+		grid-template-rows: 50px auto auto auto;
 		grid-template-areas: 
 			"header"
 			"content"
@@ -56,9 +64,10 @@
 		gap: .5rem;
 	}
 
-	header{
+	header.site-header{
 		grid-area: header;
 		@include main-elements();
+		border-radius: 0;
 		@include header.header;
 	}
 
@@ -79,7 +88,7 @@
 		*{margin: 10px 0;}
 		
 		@media(min-width: breakpoints.$large){
-			padding-right: 200px;
+			// padding-right: 200px;
 		}
 	}
 
