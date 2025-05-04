@@ -1,32 +1,5 @@
-/*!
-Theme Name: Decorpo Boilerplate
-Theme URI: http://decorpotechgarage.com
-Author: funcychaos
-Author URI: http://decorpotechgarage.com
-Description: A bare minimum boilerplate my way
-Version: 1.0.0
-Requires PHP:
-Tested up to: 8.2
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: decorpo-tech-garage
-Tags: css-grid
-
-This theme, like WordPress, is licensed under the GPL.
-*/
-
-/*
-	*** TABLE OF CONTENTS:
-		# Generic
-		# Layout
-		# Components
-*/
-
-/* # Generic */
-@use './generic';
-
-/* # Layouts */
-@use './layout/layout';
-
-/* # Components */
-@use './components/components';
+@use "style-comments";
+@use "base";
+@use "layout";
+@use "pages";
+@use "views";

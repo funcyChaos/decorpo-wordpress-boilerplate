@@ -1,0 +1,9 @@
+@use "colors" as *;
+
+@mixin link-styling{
+	text-decoration: none;
+	color: $font;
+	&:hover{
+		color: $link;
+	}
+}
