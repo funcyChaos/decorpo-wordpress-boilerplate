@@ -60,3 +60,4 @@ add_action('after_setup_theme', function(){
 
 require get_template_directory().'/inc/custom-post-types.php';
 require get_template_directory().'/inc/birthday-api.php';
+require get_template_directory().'/inc/contact.php';

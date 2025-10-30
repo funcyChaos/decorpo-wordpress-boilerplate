@@ -1,6 +1,12 @@
 @use '../variables/breakpoints';
 @use '../variables/colors';
 
+article.service{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
 .service.post-list-item{
 	width: 100%;
 	border-bottom: colors.$font solid 2px;

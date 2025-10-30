@@ -85,7 +85,7 @@
 
 		@include main-elements();
 		@include common.common;
-		*{margin: 10px 0;}
+		// *{margin: 10px 0;}
 		
 		@media(min-width: breakpoints.$large){
 			// padding-right: 200px;
