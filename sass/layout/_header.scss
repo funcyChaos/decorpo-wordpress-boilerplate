@@ -1,4 +1,4 @@
-@use '../../variables/breakpoints';
+@use "../variables" as *;
 
 @mixin mobile-menu{
 	.mobile-menu{
@@ -21,12 +21,12 @@
 			gap: 1rem;
 			list-style: none;
 			list-style-type: none;
-			font-size: 2rem;
+			font-size: .5rem;
 			a{
 				color: white;
-				text-decoration: none;
+				// text-decoration: none;
 			}
-			@media(max-width: breakpoints.$small){
+			@media(max-width: $small){
 				font-size: 1.5rem;
 			}
 		}
@@ -41,7 +41,6 @@
 	.hidden {
 		display: none;
 	}
-	/* ensure box is displayed block during the transition  */
 	.transition.hidden {
 		display: block;
 		opacity: 0;
@@ -52,48 +51,22 @@
 }
 
 @mixin header{
-	padding: 0;
+	padding: 5px;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 170px 1fr 2fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
-		"logo title menu"
-		"logo title menu"
+		"title menu"
+		"title menu"
 	;
 	gap: 1rem;
 
-	@media(max-width: breakpoints.$medium){
+	@media(max-width: $medium){
+		grid-template-columns: 2fr 1fr;
 		grid-template-areas: 
-			"logo title title"
-			"logo menu menu"
+			"title menu"
+			"title menu"
 		;
-	}
-
-	@media(max-width: breakpoints.$smaller){
-		grid-template-areas: 
-			"logo title menu"
-			"logo title menu"
-		;
-	}
-
-	@media(max-width: breakpoints.$smallest){
-		grid-template-columns: 130px 1fr 1fr;
-	}
-
-	.site-logo{
-		grid-area: logo;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		border-right: 2px solid #ffffff;
-		.custom-logo{
-			height: 130px;
-			width: auto;
-			@media(max-width: breakpoints.$smallest){
-				height: 100px;
-			}
-		}
 	}
 
 	.site-title{
@@ -101,12 +74,12 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+		a{text-decoration: none;}
 		a:hover{
 			color: unset;
 		}
-		@media(max-width: breakpoints.$small){
-			h1{font-size: 1.5rem;}
-			align-items: flex-start;
+		@media(max-width: $small){
+			font-size: .6rem;
 		}
 	}
 
@@ -115,8 +88,9 @@
 		height: 100%;
 		display: flex;
 		justify-content: center;
-		align-items: flex-end;
-		@media(max-width: breakpoints.$medium){
+		align-items: center;
+		@media(max-width: $medium){
+			padding-right: 10px;
 			justify-content: flex-end;
 		}
 		.menu{
@@ -125,20 +99,20 @@
 			list-style: none;
 			list-style-type: none;
 			font-size: 2rem;
-			a{text-decoration: none;}
-			@media(max-width: breakpoints.$small){
+			// a{text-decoration: none;}
+			@media(max-width: $small){
 				font-size: 1.5rem;
 			}
 		}
 		.fa-bars{
 			display: none;
-			font-size: 4rem;
+			font-size: 2rem;
 			cursor: pointer;
-			@media(max-width: breakpoints.$smallest){
+			@media(max-width: $smallest){
 				font-size: 3rem;
 			}
 		}
-		@media(max-width: breakpoints.$smaller){
+		@media(max-width: $medium){
 			.menu{display: none;}
 			.fa-bars{display: block;}
 		}

@@ -1,0 +1,88 @@
+@use 'header';
+@use 'sidebar';
+@use 'footer';
+@use "../variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+$background: #1e1e25;
+$foreground: #0d000d;
+
+@include header.mobile-menu;
+
+@mixin main-elements{
+	background-color: $foreground;
+	color: white;
+	border-radius: 1rem;
+}
+
+.site{
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	grid-template-rows: 70px auto 200px;
+	grid-template-areas: 
+		"sidebar header header"
+		"sidebar content content"
+		"footer footer footer"
+	;
+
+	gap: 1rem;
+	min-height: 100vh;
+	padding: .6rem;
+
+	font-family: "Titillium Web", serif;
+  font-weight: 300;
+  font-style: normal;
+	background-color: $background;
+	a{color: white;}
+
+	@media(max-width: $small){
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: 
+			"header"
+			"content"
+			"sidebar"
+			"footer"
+		;
+	
+		gap: .5rem;
+	}
+
+	header{
+		grid-area: header;
+		@include main-elements();
+		@include header.header;
+	}
+
+	aside{
+		grid-area: sidebar;
+		@include main-elements();
+		@include sidebar.sidebar;
+	}
+
+	main{
+		grid-area: content;
+		display: flex;
+		flex-direction: column;
+		@include main-elements();
+		// align-items: center;
+		
+		*{margin: 10px 0;}
+		@media(max-width: $medium){
+			// margin: 0 1rem;
+		}
+	}
+
+	footer{
+		grid-area: footer;
+		@include main-elements();
+		@include footer.footer;
+	}
+
+	.content-main,.site-footer{
+		padding: 1rem;
+		@media(max-width: $smaller){
+			padding: .5rem;
+		}
+	}
+}
