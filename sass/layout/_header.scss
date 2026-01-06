@@ -60,6 +60,9 @@
 		"title menu"
 	;
 	gap: 1rem;
+	position: sticky;
+	top: 0;
+	
 
 	@media(max-width: $medium){
 		grid-template-columns: 2fr 1fr;

@@ -27,11 +27,11 @@ $foreground: #0d000d;
 
 	gap: 1rem;
 	min-height: 100vh;
-	padding: .6rem;
+	// padding: .6rem;
 
 	font-family: "Titillium Web", serif;
-  font-weight: 300;
-  font-style: normal;
+	font-weight: 300;
+	font-style: normal;
 	background-color: $background;
 	a{color: white;}
 
@@ -52,6 +52,7 @@ $foreground: #0d000d;
 		grid-area: header;
 		@include main-elements();
 		@include header.header;
+		border-radius: 0;
 	}
 
 	aside{
@@ -66,10 +67,19 @@ $foreground: #0d000d;
 		flex-direction: column;
 		@include main-elements();
 		// align-items: center;
+		video{
+			border-radius: 1rem;
+			max-width: 500px;
+		}
+		figure.aligncenter{
+			display: flex;
+			justify-content: center;
+		}
 		
-		*{margin: 10px 0;}
 		@media(max-width: $medium){
-			// margin: 0 1rem;
+			video{
+				max-width: 300px;
+			}
 		}
 	}
 
